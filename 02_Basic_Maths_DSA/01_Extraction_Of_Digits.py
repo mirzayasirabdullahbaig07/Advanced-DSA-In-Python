@@ -30,4 +30,4 @@ while num > 0:                  # Continue loop until number becomes 0
     print(last_digit, end=" ")  # Print the digit (in reverse order)
     num = num // 10             # Remove the last digit using floor division
 
-# Output: 3 7 8 5
+# Output is this: 3 7 8 5
