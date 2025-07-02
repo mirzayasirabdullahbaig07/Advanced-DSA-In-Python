@@ -38,20 +38,15 @@ print(f"Digits in 409: {count_digits(409)}")        # 3
 # Time Complexity: O(1)
 # Space Complexity: O(1)
 
-
-# ----------------------------------------------------------------------------------
-# Summary:
-# ----------------------------------------------------------------------------------
-# 
 # Digit Extraction:
 # - Use while loop with %10 and //10 to print digits in reverse order.
 # - Time: O(log10(n)), Space: O(1)
-#
+
 # Digit Counting:
 # - Loop Method: O(log10(n)), Space: O(1)
 # - Log Method:  O(1),         Space: O(1)
-#
+
 # Logarithmic method is faster and cleaner but requires import.
-#
+
 # These are foundational DSA building blocks used in number theory, digit manipulation,
 # and base conversions.
