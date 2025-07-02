@@ -25,7 +25,6 @@ for i in range(1, 6):
 # Rule 3: Ignore lower-order terms.
 
 # ---------------------- Best, Average, and Worst Case ----------------------
-
 # Example:
 age = 100
 if age >= 80:
