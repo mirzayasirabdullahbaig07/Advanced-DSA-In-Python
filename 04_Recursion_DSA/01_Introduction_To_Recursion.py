@@ -48,3 +48,6 @@ def fun():
     print("yasir")
 
 fun()
+
+
+# this is called backtracking 
