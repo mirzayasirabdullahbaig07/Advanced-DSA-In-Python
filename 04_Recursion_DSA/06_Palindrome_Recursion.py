@@ -5,7 +5,7 @@
 # abcddcba is palindrome
 
 
-# ✅ now do it first using loop
+# now do it first using loop
 
 def palindrome(s, left, right):
     left = 0
@@ -27,7 +27,7 @@ else:
 
 
 
-# ✅ now do it using recursion
+# now do it using recursion
 
 def func(s, left, right):
     if left >= right:
