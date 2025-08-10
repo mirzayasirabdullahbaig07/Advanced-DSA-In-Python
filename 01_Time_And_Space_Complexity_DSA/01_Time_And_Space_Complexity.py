@@ -173,7 +173,3 @@ print('a' in my_dict)  # O(1)
 # Know the complexity of built-in operations in Python.
 # Time complexity is critical in competitive programming and real-world systems.
 # Space complexity is also important in memory-limited environments.
-
-# Let me know if you want this saved as a .py file or converted to GitHub-friendly markdown!
-
-# Thanks For Reading 
