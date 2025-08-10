@@ -1,106 +1,88 @@
-# Linear Time Complexity
-# Definition: 
-# The execution time grows linearly with the input size n. Each element is visited once.
+# Constant Time Complexity (O(1))
+# Definition:
+# The execution time does not depend on the size of input.
+# Even if the input grows, the number of operations remains constant.
 
-# Program 1: Print All Elements (Easy)
-def print_all(arr):
-    for x in arr:
-        print(x)
-# What it does: Prints all elements in the list.
-# Time Complexity: O(n) – Traverses each element once.
+# Program 1: Access first element
+def access_first(arr):
+    print(arr[0])
+# What it does: Prints the first element of the list.
+# Why O(1): Accessing a specific index in a list takes constant time, no matter the list size.
+# Time Complexity: O(1)
 # Space Complexity: O(1)
 
-# Program 2: Find Maximum in List (Easy)
-def find_max(arr):
-    max_val = arr[0]
-    for num in arr:
-        if num > max_val:
-            max_val = num
-    print("Max:", max_val)
-# What it does: Finds the maximum number in list.
-# Time Complexity: O(n) – One scan of array.
+# Program 2: Check if number is even
+def is_even(num):
+    print(num % 2 == 0)
+# What it does: Checks if a given number is divisible by 2.
+# Why O(1): A single modulus operation takes constant time, regardless of the number’s size.
+# Time Complexity: O(1)
 # Space Complexity: O(1)
 
-# Program 3: Count Occurrences (Easy)
-def count_occurrences(arr, target):
-    count = 0
-    for num in arr:
-        if num == target:
-            count += 1
-    print("Count:", count)
-# What it does: Counts how many times target appears.
-# Time Complexity: O(n)
+# Program 3: Swap two numbers
+def swap_numbers(a, b):
+    a, b = b, a
+    print(a, b)
+# What it does: Exchanges the values of two variables.
+# Why O(1): Only a fixed number of assignments happen, independent of input size.
+# Time Complexity: O(1)
 # Space Complexity: O(1)
 
-# Program 4: Sum of Elements (Easy)
-def sum_elements(arr):
-    total = 0
-    for x in arr:
-        total += x
-    print("Sum:", total)
-# What it does: Adds all values in array.
-# Time Complexity: O(n)
+# Program 4: Return sum of first and last element
+def sum_first_last(arr):
+    print(arr[0] + arr[-1])
+# What it does: Adds the first and last elements of a list and prints the result.
+# Why O(1): Accessing elements by index and adding them both take constant time.
+# Time Complexity: O(1)
 # Space Complexity: O(1)
 
-# Program 5: Copy Array (Medium)
-def copy_array(arr):
-    new_arr = []
-    for val in arr:
-        new_arr.append(val)
-    print("Copied:", new_arr)
-# What it does: Creates a new list from old one.
-# Time Complexity: O(n)
-# Space Complexity: O(n)
-
-# Program 6: Linear Search (Medium)
-def linear_search(arr, key):
-    for i in range(len(arr)):
-        if arr[i] == key:
-            print("Found at index:", i)
-            return
-    print("Not Found")
-# What it does: Searches for key in array.
-# Time Complexity: O(n)
+# Program 5: Fixed multiplication
+def multiply_fixed():
+    print(25 * 4)
+# What it does: Multiplies two fixed numbers.
+# Why O(1): The same number of operations are performed every time, regardless of any input.
+# Time Complexity: O(1)
 # Space Complexity: O(1)
 
-# Program 7: Convert to Uppercase (Medium)
-def to_uppercase(strings):
-    for s in strings:
-        print(s.upper())
-# What it does: Converts each string to uppercase.
-# Time Complexity: O(n)
+# Program 6: Compare two values
+def compare_values(a, b):
+    print(a > b)
+# What it does: Checks if one value is greater than another.
+# Why O(1): Comparison between two numbers is always constant time.
+# Time Complexity: O(1)
 # Space Complexity: O(1)
 
-# Program 8: Count Even Numbers (Easy)
-def count_even(arr):
-    count = 0
-    for x in arr:
-        if x % 2 == 0:
-            count += 1
-    print("Even count:", count)
-# What it does: Counts even numbers in the list.
-# Time Complexity: O(n)
+# Program 7: Print a constant string
+def constant_message():
+    print("Hello World!")
+# What it does: Prints the same message every time.
+# Why O(1): Printing a fixed message requires the same operations each time.
+# Time Complexity: O(1)
 # Space Complexity: O(1)
 
-# Program 9: Print Pairs with One Loop (Hard)
-def print_pairs(arr):
-    for x in arr:
-        print(f"({x}, {x})")
-# What it does: Prints pairs (same element twice).
-# Time Complexity: O(n)
+# Program 8: Access middle element
+def middle_element(arr):
+    print(arr[len(arr)//2])
+# What it does: Finds and prints the middle element of a list.
+# Why O(1): List indexing and integer division both happen in constant time.
+# Time Complexity: O(1)
 # Space Complexity: O(1)
 
-# Program 10: Remove Negatives (Hard)
-def remove_negatives(arr):
-    positive = []
-    for num in arr:
-        if num >= 0:
-            positive.append(num)
-    print("Positives:", positive)
-# What it does: Filters out negative numbers.
-# Time Complexity: O(n)
-# Space Complexity: O(n)
+# Program 9: Calculate square of a number
+def square_number(num):
+    print(num * num)
+# What it does: Calculates and prints the square of a given number.
+# Why O(1): Multiplication takes constant time regardless of the number’s size.
+# Time Complexity: O(1)
+# Space Complexity: O(1)
 
+# Program 10: Get dictionary value by key
+def get_value(dictionary, key):
+    print(dictionary[key])
+# What it does: Retrieves and prints a value from a dictionary using its key.
+# Why O(1): Dictionary lookups are constant time on average due to hashing.
+# Time Complexity: O(1)
+# Space Complexity: O(1)
 
 
 # Constant Time Complexity with Recursion-like Behavior (O(1))

@@ -66,7 +66,7 @@ else:
 # Interviewers usually expect Big-O (worst case) unless specified.
 
 # ---------------------- Example: Nested Loop O(n²) ----------------------
-
+n = 1
 for i in range(1, n + 1):
     for j in range(1, n + 1):
         # some code
