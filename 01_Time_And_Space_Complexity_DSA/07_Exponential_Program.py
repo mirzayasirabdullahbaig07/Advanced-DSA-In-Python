@@ -118,4 +118,5 @@ def exponential_brute(a, b):
     if b == 0:
         return 1
     return a * exponential_brute(a, b-1)
+
 # Time: O(b), Space: O(b) (if b = n, linear. if optimized, O(log n))
