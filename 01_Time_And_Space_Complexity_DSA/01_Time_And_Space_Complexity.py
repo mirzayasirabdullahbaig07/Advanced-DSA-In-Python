@@ -1,175 +1,118 @@
-# ---------------------- Time Complexity & Space Complexity in Python DSA ----------------------
+# Time Complexity and Space Complexity
+# ----------------------------------
+# Both measure an algorithm’s efficiency.
+# - Time complexity shows how the running time increases with input size.
+# - Space complexity tracks memory usage.
+#
+# Both are essential for optimizing algorithms, especially when dealing with large datasets or limited resources.
+#
+# In this article, we will explore these two concepts of algorithm analysis,
+# along with their examples, cases, best practices, and more.
 
-# WRONG DEFINITION (Common Misunderstanding):
-# Time complexity is NOT the number of seconds a code takes to run.
-# Example:
-# - On a Mac, code takes 5 seconds.
-# - On Windows 7, it takes 15 seconds.
-# This isn't time complexity — it’s hardware performance!
+# -----------------------------------------------------
+# What is Time Complexity?
+# -----------------------------------------------------
+# When solving a problem, there may be multiple approaches (codes) to achieve the desired result.
+# The concept of time complexity helps us evaluate & compare these approaches.
+#
+# It allows us to determine which one is more efficient. It’s a crucial metric that often becomes
+# a key focus during technical interviews because it demonstrates the effectiveness of a solution.
+#
+# Time complexity measures how the time required to execute a code changes as the size of the input grows.
+# It is independent of the machine used to execute the code & focuses solely on the algorithm’s behavior.
 
-# REAL DEFINITION:
-# Time Complexity = Rate of increase in operations with respect to input size (n).
-# We use Big-O notation (e.g., O(n), O(n²), O(log n)) to describe it.
-# It shows the approximate growth pattern, not the exact execution time.
+# -----------------------------------------------------
+# Example 1: Simple While Loop
+# -----------------------------------------------------
+i = 1
+while i <= 5:
+    print("Code and Debug")
+    i += 1
 
-# Example:
-for i in range(1, 6):
-    print("yasir")
-# The loop runs 5 times, each with 3 operations: check, print, increment.
-# Total operations = 3 * 5 = 15 → Time complexity = O(n), not O(15)
+# Step Analysis:
+# Initialization → Comparison → Execution → Increment → Repeat.
+# The loop runs 5 times.
+# For each iteration → 3 steps.
+# Total steps = 5 × 3 = 15 → O(N) after ignoring constants.
 
-# ---------------------- Rules to Calculate Time Complexity ----------------------
+# -----------------------------------------------------
+# Why Not Use Machine Time?
+# -----------------------------------------------------
+# - Different machines have different execution speeds.
+# - Evaluating code only by machine execution time is unreliable.
 
-# Rule 1: Always calculate time complexity in worst case (Big-O).
-# Rule 2: Ignore constant values.
-# Rule 3: Ignore lower-order terms.
+# -----------------------------------------------------
+# Rules for Calculating Time Complexity
+# -----------------------------------------------------
+# 1. Always analyze the worst-case scenario.
+# 2. Ignore constant factors.
+# 3. Focus on growth rate.
 
-# ---------------------- Best, Average, and Worst Case ----------------------
-# Example:
-age = 100
-if age >= 80:
-    print("most senior citizen")
-elif age >= 60 and age <= 80:
-    print("senior")
-elif age >= 24 and age < 60:
-    print("working")
-elif age >= 16 and age < 24:
-    print("teenager")
+# -----------------------------------------------------
+# Example 2: Grading System
+# -----------------------------------------------------
+marks = int(input("Enter your marks = "))
+
+if marks >= 90:
+    print("A")
+elif marks >= 80 and marks < 90:
+    print("B")
+elif marks >= 70 and marks < 80:
+    print("C")
+elif marks >= 60 and marks < 70:
+    print("D")
+elif marks >= 50 and marks < 60:
+    print("E")
 else:
-    print("babies")
+    print("Fail")
 
-# Best Case: age = 100 → 1 operation
-# Average Case: age = 50 → 3 operations
-# Worst Case: age = 10 → All conditions checked → 5 operations
+# Best Case: 3 steps (input, condition, print)
+# Worst Case: 7 steps (input + 5 conditions + else)
+# Average Case: depends on distribution of marks
+# Worst-case Time Complexity = O(k), where k = number of conditions.
 
-# Why Worst Case?
-# In real-world systems (e.g., websites with millions of users), we must ensure performance holds up under maximum load.
+# -----------------------------------------------------
+# Ignoring Constants Example
+# -----------------------------------------------------
+# T(N) = 5N^10 + 8N^3 + 2
+# For very large N → Dominant term = N^10 → Time Complexity = O(N^10)
 
-# ---------------------- Avoid Constant Values ----------------------
-
-# Example:
-# O(8n⁶ + 3n² + 15)
-# If n is very large (e.g., 10⁵), constants and lower terms are negligible.
-# Final TC = O(n⁶)
-
-# ---------------------- Avoid Lower Bound ----------------------
-
-# Example:
-# Adding 100,000 to 1,000,000,000,000 has little effect → So, ignore small terms.
-
-# ---------------------- Types of Time Complexity ----------------------
-
-# Big-O     → Worst case (upper bound)
-# Theta (θ) → Average case (tight bound)
-# Omega (Ω) → Best case (lower bound)
-
-# Interviewers usually expect Big-O (worst case) unless specified.
-
-# ---------------------- Example: Nested Loop O(n²) ----------------------
-n = 1
-for i in range(1, n + 1):
-    for j in range(1, n + 1):
-        # some code
-        pass
-
-# i = 1 → j runs 1 to n
-# i = 2 → j runs 1 to n
-# Total operations = n * n = O(n²)
-
-# ---------------------- Example: Triangular Loop ----------------------
-
-for i in range(1, n + 1):
-    for j in range(1, i + 1):
-        # some code
-        pass
-
-# j runs 1, 2, 3, ..., n → total = n(n+1)/2 = O(n²)
-
-# ---------------------- Space Complexity ----------------------
-
-# Space Complexity = Total memory used
-# Includes:
-# - Input space (original inputs)
-# - Auxiliary space (temporary variables/data structures)
+# -----------------------------------------------------
+# What is Space Complexity?
+# -----------------------------------------------------
+# Space complexity refers to the amount of memory required by a program during execution.
+#
+# Components:
+# - Input Space → memory for input data.
+# - Auxiliary Space → temporary memory for variables, data structures, stacks.
 
 # Example:
-a = 2
-b = 4
-sum_ab = a + b
-print(sum_ab)
-# Input space: a, b
-# Auxiliary space: sum_ab
+a = int(input())  # Input Space
+b = int(input())  # Input Space
+c = a + b         # Auxiliary Space
+print(c)
+# Total variables used = 3 → Space Complexity = O(1)
 
-# Example 2 (Bad Practice):
-x = 2
-y = 2
-x = x + y  # modifying input space (not recommended)
-print(x)
-# Don't modify input space unless explicitly allowed
+# If using an array of size N → Space Complexity = O(N).
 
-# ---------------------- TLE — Time Limit Exceeded ----------------------
+# -----------------------------------------------------
+# Good Coding Practice:
+# -----------------------------------------------------
+# - Do not modify inputs directly just to reduce space.
+# - Always prioritize clarity & integrity of code.
 
-# Time limit on many platforms = 1 second = 10⁸ operations
-# If your algorithm takes 10¹⁰ operations, it will take 100 seconds → TLE
+# -----------------------------------------------------
+# Competitive Programming Guidelines
+# -----------------------------------------------------
+# - Online servers handle about 10^8 operations per second.
+# - For 2s time limit → ≤ 2 × 10^8 operations.
+# - Always aim for O(10^8) operations or lower.
 
-# Example:
-lst = [5, 8, 7, 6, 5, 1, 3]
-# If you use bubble sort (O(n²)) and N = 10⁵:
-# 10⁵ * 10⁵ = 10¹⁰ → Too slow!
-
-# ---------------------- Time Complexity of Python List Operations ----------------------
-
-# Operation                 | Average      | Worst
-# -------------------------|--------------|--------------
-# Copy                     | O(n)         | O(n)
-# Append                   | O(1)         | O(1)
-# Pop (last)               | O(1)         | O(1)
-# Pop (middle)             | O(n)         | O(n)
-# Insert                   | O(n)         | O(n)
-# Get item (lst[i])        | O(1)         | O(1)
-# Set item (lst[i] = x)    | O(1)         | O(1)
-# Delete item              | O(n)         | O(n)
-# Iterate                  | O(n)         | O(n)
-# Slice                    | O(k)         | O(k)
-# Extend                   | O(k)         | O(k)
-# Sort                     | O(n log n)   | O(n log n)
-# Multiply lst*k           | O(nk)        | O(nk)
-# x in lst                 | O(n)         | O(n)
-
-# ---------------------- Time Complexity of Set Operations ----------------------
-
-# Operation                       | Average     | Worst
-# -------------------------------|-------------|-------------
-# x in s                         | O(1)        | O(n)
-# s | t (Union)                  | O(len(s)+len(t))
-# s & t (Intersection)           | O(min(s,t)) | O(len(s)*len(t))
-# s - t (Difference)             | O(len(s))   | O(len(s))
-# s ^ t (Symmetric Difference)   | O(len(s))   | O(len(s)*len(t))
-
-# Example:
-my_set = {5, 3, 2, 1, 10, 11, 15}
-print(15 in my_set)  # O(1) average case
-
-# ---------------------- Time Complexity of Dictionary Operations ----------------------
-
-# Operation               | Average      | Worst
-# ------------------------|--------------|--------------
-# k in d                  | O(1)         | O(n)
-# Get item                | O(1)         | O(n)
-# Set item                | O(1)         | O(n)
-# Delete item             | O(1)         | O(n)
-# Copy                    | O(n)         | O(n)
-# Iterate                 | O(n)         | O(n)
-
-# Example:
-my_dict = {'a': 7, 'c': 10, 15: 20}
-print('a' in my_dict)  # O(1)
-
-# ---------------------- Final Notes ----------------------
-
-# Always assume Big-O (worst case) in interviews unless stated.
-# Ignore constants and lower-order terms.
-# Don't mutate input space unless asked.
-# Know the complexity of built-in operations in Python.
-# Time complexity is critical in competitive programming and real-world systems.
-# Space complexity is also important in memory-limited environments.
+# -----------------------------------------------------
+# Conclusion
+# -----------------------------------------------------
+# By understanding and optimizing both time complexity and space complexity:
+# - You write efficient, scalable code.
+# - Maintain input integrity unless explicitly allowed.
+# - Be mindful of execution constraints in coding platforms.
+# - These skills improve coding interviews and real-world problem solving.
