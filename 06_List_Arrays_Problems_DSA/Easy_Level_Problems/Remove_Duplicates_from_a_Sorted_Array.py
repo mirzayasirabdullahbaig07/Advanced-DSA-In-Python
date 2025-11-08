@@ -9,10 +9,11 @@
 - Input: A sorted array (non-decreasing order).
 - Task: Remove duplicates in-place so that each unique
   element appears only once, preserving order.
+  
 - Output:
   - Modify nums in-place.
   - Return the number of unique elements.
-  
+
 - Extra constraint: Do NOT use extra space (in-place).
 
 Example:
