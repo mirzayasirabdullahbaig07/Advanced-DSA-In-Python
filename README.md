@@ -2,7 +2,7 @@
 
 Welcome to the **Advanced DSA in Python** repository!
 
-This is your complete guide to learning and mastering **Data Structures and Algorithms (DSA)** using the Python — from fundamentals to advanced problem-solving.
+This is your complete guide to learning and mastering **Data Structures and Algorithms - (DSA)** using the Python — from fundamentals to advanced problem-solving.
 
 ---
 
